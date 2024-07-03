@@ -112,7 +112,7 @@ function countdown() {
             gameOver = true;
 
         }
-        console.log(countdown)
+
 
         if (seconds > 0) {
             time.innerHTML = `TIME: ${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
