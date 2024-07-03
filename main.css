@@ -1,0 +1,121 @@
+
+* {
+    box-sizing: border-box;
+}
+.section{
+    display: flex;
+}
+
+.container {
+    width: 650px;
+    height: 520px;
+    box-shadow: 0 0 8px #ddd;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 130px;
+    height: 130px;
+    position: relative;
+}
+
+.front {
+    width: 130px;
+    height: 130px;
+    background-color: tomato;
+    position: absolute;
+    transform: perspective(900px) rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+}
+
+.back {
+    width: 130px;
+    height: 130px;
+    background-color: cadetblue;
+    position: absolute;
+    transition: 1s all;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+}
+
+
+.pulse {
+    background-color: red;
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	70% {
+		transform: scale(0.9);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+.card.active > .back {
+    transform: perspective(900px) rotateY(180deg);
+}
+
+.card.active > .back.pulse {
+    opacity: 0;
+    border: none;
+}
+
+.card.active > .front {
+    transform: perspective(900px) rotateY(0);
+}
+
+.gameTime{
+    width: 255px;
+   margin: 0 auto;
+}
+
+.timer{
+    font-size: 50px;
+    color: blue;
+}
+.repeat{
+    background-color: orange;
+    color: blue;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: none;
+}
+
+.time-up {
+    transform: scale(1);
+    animation: pulse 1s infinite;
+}
+
+@keyframes time-up {
+	0% {
+		transform: scale(1);
+	}
+
+	70% {
+		transform: scale(0.9);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
