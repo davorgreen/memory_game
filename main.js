@@ -4,7 +4,7 @@ const icons = ['😀', '😀', '😂', '😂', '😍', '😍', '😎', '😎', '
 let twoFlipped = [];
 let gameOver = false;
 createCards();
-console.log(gameOver)
+
 
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => card.addEventListener('click', flipCard));
